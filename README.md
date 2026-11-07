@@ -1,47 +1,52 @@
-# LessonForge AI – AI-Powered Lesson Creation Platform
+# 📚 LessonForge AI – AI-Powered Lesson Creation Platform
 
-**LessonForge AI** is an AI-powered lesson creation platform that helps educators create structured, engaging, and high-quality lessons. It researches learning resources, generates a 45-minute lesson based on the given topic and learning objective, and evaluates the lesson using two independent quality-control layers.
+**LessonForge AI** is an AI-powered lesson creation platform designed to help educators create structured, engaging, and high-quality lessons. It combines educational research, AI-powered content generation, and two independent quality-control layers to simplify lesson planning.
 
-## 🚀 Live Demo
+🌐 **Live Demo:** [Launch LessonForge AI](https://leappnforge-ai-qstbrkuyzcq4giymbzgk7y.streamlit.app/)
 
-[Open LessonForge AI](https://leappnforge-ai-qstbrkuyzcq4giymbzgk7y.streamlit.app/)
+💻 **GitHub Repository:** [LessonForge AI](https://github.com/Thriguna333/LessonForge-AI)
 
-## 📌 Project Overview
+---
 
-Creating effective lesson plans requires research, subject knowledge, and instructional planning. LessonForge AI simplifies this process by combining AI-powered content generation, educational research, and quality checks in one application.
+## 🎯 Project Overview
 
-The user enters a lesson title and learning objective. The platform researches relevant resources and generates a structured lesson that can be reviewed, edited, evaluated, and exported.
+Creating effective lesson plans requires research, subject knowledge, and instructional planning.
+
+LessonForge AI streamlines this process. Educators provide a lesson title and learning objective, and the platform researches relevant resources, generates a structured 45-minute lesson, and evaluates it through two independent quality-control layers.
+
+The generated lesson can be reviewed, edited, improved, saved, and exported.
 
 ## ✨ Key Features
 
 ### 1. AI-Powered Research
 - Finds relevant educational websites and learning resources.
 - Identifies useful books and YouTube videos.
-- Organizes research resources for reference.
+- Organizes research references for further learning.
 
 ### 2. AI Lesson Generation
 - Generates structured 45-minute lesson plans.
 - Includes explanations, examples, and practical applications.
-- Adds learning activities and knowledge checks.
-- Includes references to supporting resources.
+- Adds hands-on activities and knowledge checks.
+- Aligns lesson content with the provided learning objectives.
 
-### 3. Quality Control – QC1: Factual Accuracy
+### 3. QC1 – Factual Accuracy Audit
 Evaluates the lesson for:
 - Factual correctness.
 - Unsupported or misleading claims.
 - Source reliability and relevance.
 - Missing information and inconsistencies.
 
-### 4. Quality Control – QC2: Instructional Quality
+### 4. QC2 – Instructional Quality Audit
 Evaluates the lesson for:
 - Alignment with learning objectives.
 - Clarity and organization.
 - Relevance of examples and activities.
 - Gaps in explanations and practical applications.
+- Lesson structure and time feasibility.
 
 ### 5. Lesson Editor
 - Review and edit generated lessons.
-- Apply quality-control recommendations.
+- Review and apply QC recommendations.
 - Save lesson changes.
 - Maintain lesson versions.
 
@@ -53,17 +58,82 @@ Export the completed work as:
 - QC2 instructional quality report.
 - Complete ZIP package.
 
+---
+
+## 🔄 Application Workflow
+
+1. Enter the lesson title and learning objective.
+2. Research relevant educational resources.
+3. Generate a structured 45-minute lesson.
+4. Review the generated lesson.
+5. Run QC1 to evaluate factual accuracy.
+6. Run QC2 to evaluate instructional quality.
+7. Review and apply recommendations.
+8. Edit and save the final lesson.
+9. Export the lesson, references, and audit reports.
+
+---
+
+## 🧪 Sample Generated Lesson
+
+The following sample demonstrates the lesson generation, research, and quality-control workflow.
+
+### Python Functions: Basics and Practical Applications
+
+**Learning objectives:**
+- Explain Python functions and code reusability.
+- Define and call Python functions.
+- Use parameters and arguments.
+- Retrieve results using the `return` statement.
+- Differentiate between local and global variables.
+- Write reusable functions for simple programming problems.
+
+**Lesson contents:**
+- Introduction to Python functions.
+- Function definition and calling.
+- Parameters, arguments, and return statements.
+- Local and global variable scope.
+- Practical Python examples.
+- Hands-on coding activity.
+- Multiple-choice knowledge checks.
+- Learning references.
+
+### Quality Control Results
+
+| Quality Check | Result |
+|---|---|
+| QC1 – Factual Accuracy | PASS |
+| QC2 – Instructional Quality | PASS WITH WARNINGS |
+
+QC2 identified improvement opportunities, including adding a solution key for the hands-on activity and refining the learning objective.
+
+### Sample Files
+
+All generated sample outputs are available in the [`samples/`](samples/) folder.
+
+| File | Description |
+|---|---|
+| [Final Lesson](samples/final_lesson.md) | Complete generated 45-minute lesson |
+| [Research References](samples/research_references.md) | Websites, books, and YouTube resources |
+| [QC1 Report](samples/qc1_factual_report.md) | Factual accuracy audit |
+| [QC2 Report](samples/qc2_instructional_report.md) | Instructional quality audit |
+
+---
+
 ## 🛠️ Technologies Used
 
 | Technology | Purpose |
 |---|---|
 | Python | Core application logic |
-| Streamlit | User interface |
-| Google Gemini API | AI-powered lesson generation and quality checks |
-| DuckDuckGo Search | Web research |
+| Streamlit | Interactive web application |
+| Google Gemini API | Lesson generation and quality evaluation |
+| DuckDuckGo Search | Educational web research |
 | BeautifulSoup | Web content extraction |
 | YouTube Search | Finding educational videos |
+| PyMuPDF | PDF processing |
 | ReportLab | Document generation |
+
+---
 
 ## 📂 Project Structure
 
@@ -73,7 +143,7 @@ LessonForge-AI/
 ├── app.py
 ├── config.py
 ├── requirements.txt
-├── .env
+├── README.md
 │
 ├── research/
 │   ├── __init__.py
@@ -93,14 +163,20 @@ LessonForge-AI/
 │   ├── storage.py
 │   └── exporter.py
 │
-└── outputs/
+└── samples/
+    ├── final_lesson.md
+    ├── research_references.md
+    ├── qc1_factual_report.md
+    └── qc2_instructional_report.md
 ```
+
+---
 
 ## ⚙️ Installation and Setup
 
 ### Prerequisites
 - Python 3.10 or above.
-- A Google Gemini API key.
+- Google Gemini API key.
 
 ### 1. Clone the repository
 
@@ -135,50 +211,8 @@ Create a `.env` file in the project root:
 GEMINI_API_KEY=your_gemini_api_key
 ```
 
-Replace the placeholder with your own API key. Never upload your API key or `.env` file to GitHub.
+Replace the placeholder with your own API key.
 
-### 5. Run the application
+**Security:** Never upload your `.env` file or API key to GitHub.
 
-```bash
-streamlit run app.py
-```
-
-The application will open in your browser.
-
-## 🧪 Sample Lessons
-
-The application was tested with different lesson topics, including:
-
-1. **HTTP Requests and Responses** – Understanding GET and POST requests and HTTP status codes.
-2. **Python Functions: Basics and Practical Applications** – Learning function definitions, parameters, return values, and variable scope.
-
-## 🔄 Application Workflow
-
-1. Enter the lesson title and learning objective.
-2. Research relevant learning resources.
-3. Generate a structured 45-minute lesson.
-4. Review the generated lesson.
-5. Run QC1 for factual accuracy.
-6. Run QC2 for instructional quality.
-7. Review and apply recommendations.
-8. Edit and save the final lesson.
-9. Export the lesson, references, and quality reports.
-
-## 🔐 API Configuration
-
-The application uses a Gemini API key for AI-powered functionality. For local development, configure the key in `.env`. For Streamlit Cloud deployment, configure it through the application's secrets settings.
-
-## 👩‍💻 Author
-
-**Manikonda Sai Thriguna**
-
-AI & Machine Learning Student
-
-## 🔗 Project Links
-
-- **GitHub Repository:** https://github.com/Thriguna333/LessonForge-AI
-- **Live Application:** https://leappnforge-ai-qstbrkuyzcq4giymbzgk7y.streamlit.app/
-
----
-
-*LessonForge AI – Research, Generate, Evaluate, and Create Better Lessons.*
+For Streamlit Cloud, configure
