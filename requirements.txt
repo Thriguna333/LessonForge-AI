@@ -1,0 +1,10 @@
+streamlit
+google-generativeai
+python-dotenv
+requests
+beautifulsoup4
+duckduckgo-search
+pypdf
+reportlab
+youtube-search-python
+google-genai
