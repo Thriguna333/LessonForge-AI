@@ -8,3 +8,4 @@ pypdf
 reportlab
 youtube-search-python
 google-genai
+ddgs
