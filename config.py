@@ -5,14 +5,23 @@ from google import genai
 
 load_dotenv()
 
+# Get API key locally from .env or from Streamlit Cloud Secrets
 API_KEY = os.getenv("GEMINI_API_KEY")
 
 if not API_KEY:
-    raise ValueError("GEMINI_API_KEY not found. Check your .env file.")
+    try:
+        import streamlit as st
+        API_KEY = st.secrets.get("GEMINI_API_KEY")
+    except Exception:
+        API_KEY = None
+
+if not API_KEY:
+    raise ValueError(
+        "GEMINI_API_KEY not found. Configure it in .env or Streamlit Secrets."
+    )
 
 client = genai.Client(api_key=API_KEY)
 
-# Try lighter models first, then the primary model.
 MODEL_NAMES = [
     "gemini-3.5-flash-lite",
     "gemini-3.6-flash",
